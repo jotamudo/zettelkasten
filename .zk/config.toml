@@ -15,7 +15,7 @@
 #default-title = "Untitled"
 
 # Template used to generate a note's filename, without extension.
-#filename = "{{id}}"
+filename = "{{id}}"
 
 # The file extension used for the notes.
 #extension = "md"
@@ -46,13 +46,17 @@ template = "default.md"
 # Letter case for the random IDs, among lower, upper or mixed.
 #id-case = "lower"
 
+# Will be using neuron random ID
+id-charset = "hex"
+id-length = 8
+id-case = "lower"
 
 # EXTRA VARIABLES
 #
 # A dictionary of variables you can use for any custom values when generating
 # new notes. They are accessible in templates with {{extra.<key>}}
 [extra]
-
+author = "Juan Lopes"
 #key = "value"
 
 
@@ -74,6 +78,15 @@ template = "default.md"
 #filename = "{{date now}}"
 #[group."<NAME>".extra]
 #key = "value"
+[group.daily]
+paths= ["journal/daily"]
+[group.daily.note]
+filename = "{{date now '%Y%m%d'}}"
+
+[group.weekly]
+paths=["journal/weekly"]
+[group.daily.note]
+filename ="{{date now }}"
 
 
 # MARKDOWN SETTINGS
@@ -81,7 +94,7 @@ template = "default.md"
 
 # Format used to generate links between notes.
 # Either "wiki", "markdown" or a custom template. Default is "markdown".
-link-format = "wiki"
+link-format = "[[{{metadata.id}}]]"
 # Indicates whether a link's path will be percent-encoded.
 # Defaults to true for "markdown" format and false for "wiki" format.
 #link-encode-path = true

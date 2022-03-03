@@ -1,5 +1,11 @@
-# j_mudo's notes
-tags: #index
+---
+tags: [index]
+---
 
-# [[khzv]]
-# [[4le7-to-do]]
+# j_mudo's notes
+
+## [[7cf1d612]]
+
+## [[bbb31b21]]
+
+## [[ec75cec2]]
